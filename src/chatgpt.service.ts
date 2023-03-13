@@ -18,6 +18,7 @@ export class ChatGPTService implements OnModuleInit {
 
   onModuleInit() {
     const { HTTP_PROXY } = process.env;
+    const { API_PROXY } = process.env;
     if (HTTP_PROXY) {
       this.proxyAgent = new ProxyAgent(HTTP_PROXY);
     }
@@ -27,6 +28,7 @@ export class ChatGPTService implements OnModuleInit {
 
     this.api = new ChatGPTAPI({
       apiKey: process.env.OPENAI_API_KEY,
+      apiBaseUrl: API_PROXY?API_PROXY:'https://api.openai.com',
       fetch: this.proxyFetch,
       systemMessage,
       maxModelTokens: maxTokens,
