@@ -2,7 +2,22 @@
     "openai": {
     "systemMessage": "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. If you are required to translate, use advanced and fancy words and professional expression",
     "maxTokens": 3000,
-    "model": "gpt-3.5-turbo"
+    "model": "gpt-3.5-turbo",
+    "errorMapping1": [
+        {
+          "keyword": "insufficient_quota",
+          "message": "The API key has insufficient quota."
+        },
+        {
+          "keyword": "Rate limit reached for",
+          "message": "The API key has reached its rate limit."
+        },
+        {
+          "keyword": "context_length_exceeded",
+          "message": "The context length exceeds the maximum allowed length."
+        }
+      ]
     }
-}
+    }
     
+}
