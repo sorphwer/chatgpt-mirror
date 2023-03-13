@@ -36,6 +36,6 @@ lerna-debug.log*
 
 .env
 
-config/app.config.json
+# config/app.config.json
 
 pnpm-lock.yaml
